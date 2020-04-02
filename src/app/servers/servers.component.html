@@ -1,0 +1,28 @@
+<dir class="container">
+    <label>Server Name</label>
+    <input type="text" class="form-control" [(ngModel)]="serverName"><br>
+    <p>{{serverName}}</p>
+    <button class="btn btn-primary" (click)="onCreateServer()" [disabled]="!allowNewServer">Add Server</button>
+    <!-- <p>{{allowNewServer}}</p> -->
+    <!-- <p [innerText]="allowNewServer"></p> -->
+    <p *ngIf="serverCreated; else noServer">Server wascerated, Server name is {{serverName}} </p>
+    <ng-template #noServer>
+        <p>No server Created!</p>
+         
+    </ng-template>
+    <div *ngFor="let server for servers">{{server}}</div>
+
+
+</dir>
+<p style="text-align: center;">==========================================================================</p>
+<dir class="container">
+    <label>Server Name</label>
+    <input type="text" class="form-control" [(ngModel)]="userName"><br>
+    <p [ngStyle]="{backgroundColor: getColor()}">{{userName}}</p>
+    <button class="btn btn-primary"  
+    (click)="userName=''"
+    [disabled]="userName ===''">Test</button>
+    <!-- <p>{{allowNewServer}}</p> -->
+    <!-- <p [innerText]="allowNewServer"></p> -->
+    <!-- <p> {{ServerCreatedStatus}} </p> -->
+</dir>

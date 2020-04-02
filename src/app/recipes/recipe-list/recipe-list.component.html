@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-primary">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <!-- <a
+         href="#" 
+         class="list-group-item"
+         *ngFor="let recipe of recipes">
+         <span class="pull-right">
+             <img [src]="recipe.imagePath" class="img-responsive" style="max-width: 50px;" alt="">
+         </span>
+            <div class="pull-left">
+                <p class="list-group-item-heading">{{recipe.name}}</p>
+                <h3 class="list-group-item-text"> {{recipe.description}}</h3>
+            </div>
+        </a> -->
+        
+    <app-recipe-item  
+        *ngFor="let recipe of recipes" 
+        [recipe]="recipe"
+        [recipeSelected] ="onRecipeSelect(recipe)">
+    </app-recipe-item>
+    </div>
+</div>
