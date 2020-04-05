@@ -1,6 +1,8 @@
 import { Ingredient } from '../shared/Ingredient.model';
+import { EventEmitter } from '@angular/core';
 
 export class ShoppingListService{
+    ingredientChanged = new EventEmitter<Ingredient[]>();
     private ingredients: Ingredient[]  = [
         new Ingredient('Apple',9),
         new Ingredient('Banana',9),
@@ -13,6 +15,7 @@ export class ShoppingListService{
 
     addIngredient(ingredient : Ingredient){
         this.ingredients.push(ingredient);
+        this.ingredientChanged.emit(this.ingredients.slice());
     }
 
 }
