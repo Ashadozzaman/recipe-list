@@ -1,41 +1,10 @@
-<app-header   (featureSelected)="onNavigation($event)"></app-header>
+<app-header></app-header>
 <div class="container">
   <div class="row">
-      <div class="col-md-12">
-          <app-recipes *ngIf="loadedFeaature === 'recipe'"></app-recipes>
-          <app-shopping-list *ngIf="loadedFeaature !== 'recipe'"></app-shopping-list>
-      </div>
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+      <!-- <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list> -->
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <h1 style="text-align: center;">Property: {{ title}}</h1>
-<div class="container">
-  <button class="btn btn-info" (click)="onToggleDetail()">Display Details</button>
-  <p *ngIf="showSecret">This is the details pera</p>
-  <div *ngFor="let logitem of log;let i = index"
-  [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
-  [ngClass]="{'text-color' : i >= 5,'texst' : log}"
-  >{{logitem}}</div>
-</div>
-<app-servers></app-servers> -->
