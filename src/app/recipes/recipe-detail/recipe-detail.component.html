@@ -17,14 +17,16 @@
     <div
       class="btn-group"
       appDropdown>
-      <button
+      <!-- <button
         type="button"
         class="btn btn-primary dropdown-toggle">
         Manage<span class="caret"></span>
-      </button>
+      </button> -->
       <button type="button" (click)="onAddToShoppingList()" class="btn btn-secondary">To Shopping List <span class="caret"></span>
       </button>
       <button type="button" (click)="onEditRecipe()" class="btn btn-secondary">Edit Recipe<span class="caret"></span>
+      </button>
+      <button type="button" (click)="onDeleteRecipe()" class="btn btn-secondary">Delete Recipe<span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
         <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
